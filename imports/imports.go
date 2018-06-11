@@ -69,6 +69,7 @@ func Process(filename string, src []byte, opt *Options) ([]byte, error) {
 		}
 	}
 
+	removeLines(fileSet, file)
 	sortImports(fileSet, file)
 	imps := astutil.Imports(fileSet, file)
 	var spacesBefore []string // import paths we need spaces before
